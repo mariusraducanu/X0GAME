@@ -42,7 +42,9 @@ function checkWinner(positions, player) {
         (positions[0] != 0 && positions[4] != 0 && positions[8] != 0) ||
         (positions[2] != 0 && positions[4] != 0 && positions[6] != 0)) {
         document.getElementById("winningMessageText").innerHTML = "Player " + player + " win!";
-        document.getElementById("matrix").disabled = true;
+        for(let i = 0; i < 9; ++i) {
+            document.getElementById(i).disabled = true;
+        }
         coloredLine(positions);
     } else if(noClicks == 9) {
         document.getElementById("winningMessageText").innerHTML = "It's a draw";
